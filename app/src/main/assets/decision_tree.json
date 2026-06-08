@@ -1,0 +1,115 @@
+{
+  "start": "n1",
+  "nodes": {
+    "n1": {
+      "type": "question",
+      "step": "Pasul 1",
+      "text": "Există un standard armonizat aplicabil produsului?",
+      "ref": "art. 6 alin.(1) HG 668/2017 + art. 4 din RPC (UE) 305/2011 / 2024/3110",
+      "options": [
+        { "label": "DA", "next": "r1" },
+        { "label": "NU", "next": "n_choice" }
+      ]
+    },
+    "n_choice": {
+      "type": "choice",
+      "step": "Pasul 2",
+      "text": "Alegeți calea de evaluare dorită:",
+      "ref": "",
+      "options": [
+        { "label": "Opțiunea Europeană", "next": "n2" },
+        { "label": "Opțiunea Națională", "next": "n3" }
+      ]
+    },
+    "n2": {
+      "type": "question",
+      "step": "Pasul 2E",
+      "text": "Se poate obține o Evaluare Tehnică Europeană (ETE)?",
+      "ref": "art. 7 alin.(1) din HG 668/2017 + art. 4 și 19 din RPC (UE) 305/2011 / 2024/3110",
+      "options": [
+        { "label": "DA", "next": "r2" },
+        { "label": "NU", "next": "r_no_eu" }
+      ]
+    },
+    "n3": {
+      "type": "question",
+      "step": "Pasul 3N",
+      "text": "Există un standard național aplicabil produsului?",
+      "ref": "art. 10 alin.(3) din HG 668/2017",
+      "options": [
+        { "label": "DA", "next": "r3" },
+        { "label": "NU", "next": "n4" }
+      ]
+    },
+    "n4": {
+      "type": "question",
+      "step": "Pasul 4N",
+      "text": "Există un Agrement Tehnic în Construcții (ATh) aplicabil?",
+      "ref": "art. 10 alin.(3) și art. 14 din HG 668/2017 + HG 766/1997 (modif. HG 750/2017)",
+      "options": [
+        { "label": "DA", "next": "r4" },
+        { "label": "NU", "next": "r_no_nat" }
+      ]
+    },
+    "r1": {
+      "type": "result",
+      "severity": "success",
+      "step": "Concluzie",
+      "title": "Declarație de Performanță + Marcaj CE",
+      "text": "Produsul se evaluează conform standardului armonizat aplicabil și se emite Declarație de Performanță (DoP) însoțită de marcajul CE. Din 8 ianuarie 2026 se aplică integral noul RPC (UE) 2024/3110.",
+      "ref": "Reg. (UE) 305/2011 (RPC) / Reg. (UE) 2024/3110 (RPC-2024) + HG 668/2017",
+      "action": "Solicitați furnizorului DoP-ul (Declaration of Performance) și verificați prezența marcajului CE pe produs sau ambalaj. Confirmați că DoP-ul face referire la standardul armonizat aplicabil.",
+      "options": []
+    },
+    "r2": {
+      "type": "result",
+      "severity": "success",
+      "step": "Concluzie",
+      "title": "Evaluare Tehnică Europeană + Marcaj CE",
+      "text": "Produsul beneficiază de Evaluare Tehnică Europeană (ETE) și se emite Declarație de Performanță cu marcaj CE pe baza acesteia. Din 8 ianuarie 2026 se aplică integral noul RPC (UE) 2024/3110.",
+      "ref": "art. 7 alin.(1) din HG 668/2017 + art. 4 și 19 din RPC (UE) 305/2011 / 2024/3110",
+      "action": "Verificați numărul ETE emis de un Organism de Evaluare Tehnică (OET) autorizat. Solicitați DoP-ul aferent ETE și confirmați că OET-ul este notificat la Comisia Europeană.",
+      "options": []
+    },
+    "r3": {
+      "type": "result",
+      "severity": "warning",
+      "step": "Concluzie",
+      "title": "Declarație de Conformitate cu Standard Național",
+      "text": "Produsul se evaluează conform standardului național aplicabil și se emite Declarație de Conformitate de către producător.",
+      "ref": "art. 10 alin.(1)-(3) din HG 668/2017 + Legea 10/1995",
+      "action": "Solicitați Declarația de Conformitate cu standardul național și, dacă schema de certificare o impune, certificatul emis de un organism notificat/acreditat RENAR.",
+      "options": []
+    },
+    "r4": {
+      "type": "result",
+      "severity": "warning",
+      "step": "Concluzie",
+      "title": "Declarație de Conformitate cu Agrementul Tehnic",
+      "text": "Produsul se evaluează pe baza Agrementului Tehnic în Construcții (ATh) și se emite Declarație de Conformitate cu ATh de către producător.",
+      "ref": "art. 14 din HG 668/2017 + HG 766/1997 (modif. HG 750/2017) + Legea 10/1995",
+      "action": "Verificați validitatea ATh-ului: număr, titular, domeniu de aplicare și dată expirare (pe site-ul MDLPA sau INCERC). Solicitați Declarația de Conformitate cu ATh de la furnizor.",
+      "options": []
+    },
+    "r_no_eu": {
+      "type": "result",
+      "severity": "danger",
+      "step": "Concluzie",
+      "title": "Fără cale de evaluare europeană",
+      "text": "Nu există standard armonizat și nu se poate obține ETE. Produsul nu poate fi plasat pe piață cu marcaj CE pe calea europeană.",
+      "ref": "art. 4 din RPC (UE) 305/2011 / 2024/3110 + art. 6-7 din HG 668/2017",
+      "action": "Consultați un Organism de Evaluare Tehnică (OET). Luați în considerare calea națională (standard național sau ATh) sau înlocuiți produsul cu unul care deține specificație tehnică aplicabilă.",
+      "options": []
+    },
+    "r_no_nat": {
+      "type": "result",
+      "severity": "danger",
+      "step": "Concluzie",
+      "title": "Fără specificație tehnică aplicabilă",
+      "text": "Nu există nici standard național, nici Agrement Tehnic aplicabil. Produsul nu poate fi utilizat în mod reglementat pe șantier.",
+      "ref": "art. 10-14 din HG 668/2017 + HG 766/1997 + Legea 10/1995",
+      "action": "Stopați utilizarea produsului pe șantier. Contactați INCERC sau un institut de specialitate pentru inițierea procedurii de Agrement Tehnic, sau înlocuiți produsul cu unul certificat.",
+      "options": []
+    }
+  }
+}

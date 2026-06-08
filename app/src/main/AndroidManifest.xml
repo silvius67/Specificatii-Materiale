@@ -3,9 +3,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="Subcontrol Decizii"
+        android:label="Specificatii Materiale"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SubcontrolDecizii">
+        android:theme="@style/Theme.SpecificatiiMateriale">
 
         <activity
             android:name=".MainActivity"

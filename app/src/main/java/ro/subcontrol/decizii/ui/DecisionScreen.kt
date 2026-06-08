@@ -86,7 +86,7 @@ fun DecisionScreen(vm: DecisionViewModel = viewModel()) {
             }
 
             // Buton Înapoi
-            if (canGoBack && !node.isResult) {
+            if (canGoBack && node?.isResult != true) {
                 OutlinedButton(
                     onClick = { vm.goBack() },
                     modifier = Modifier.fillMaxWidth().height(46.dp),
